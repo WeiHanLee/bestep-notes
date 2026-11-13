@@ -42,7 +42,7 @@
 | 根目錄必須保留 `.nojekyll` | 讓 GitHub Pages 原樣輸出檔案 |
 
 本機預覽：首頁會用 `fetch()` 讀 JSON，直接雙擊 HTML 會失敗，請在專案根目錄執行
-`python -m http.server 8000`，再開 `http://localhost:8000`。
+`python -m http.server 8000`，再開 `http://localhost:8000`。**沒有可用的 Python 時**（例如 Windows 只有商店空殼），改用 `npx serve .` 或 VS Code 的 Live Server；也可以直接檢查已部署的 GitHub Pages 網址。
 
 ## 3. 目錄結構
 
@@ -118,7 +118,7 @@ bestep-notes/
 
 | 順序 | 區塊 | HTML | 內容規則 |
 |---|---|---|---|
-| 0 | 頁首 | `<header class="lesson-head">` | 麵包屑、技能標籤、標題、資訊列（題型／題數／建議時間） |
+| 0 | 頁首 | `<header class="lesson-head">` | 麵包屑、技能標籤、標題、資訊列（題型／題數／建議時間）。**「建議時間」指這個單元的學習時間，必須與 `lessons.json` 該筆的 `minutes` 相同**（一般為 `15 分鐘`，不要寫「約」或改成考試作答時間；考試時間分配只放在總覽單元） |
 | 1 | 本單元重點 | `<section class="key-points">` | 3～5 點，每點一句話 |
 | 2 | 題型解析 | `<section>` + `<h2>題型解析</h2>` | 這個部分考什麼、長什麼樣子；可用 `.table` |
 | 3 | 解題步驟 | `<ol class="steps">` | 3～5 步，每步「動作＋原因」 |
@@ -197,11 +197,12 @@ bestep-notes/
 ## 12. 驗收清單（每次新增或修改後都要過）
 
 - [ ] 檔名、`id`、`<body data-lesson>`、`lessons.json` 的 `id`/`file` 四者一致
+- [ ] 頁首「建議時間」與 `lessons.json` 的 `minutes` 數字相同
 - [ ] 第 7 節 0～8 區塊齊全且順序正確，沒有殘留 `{{`
 - [ ] 至少 3 題練習，每題 `data-answer` 正確、選項 `data-key` 不重複
 - [ ] 沒有外部網址資源、行內樣式、`<style>`、自寫 `<script>` 邏輯
-- [ ] `lessons.json` 是合法 JSON（`python -m json.tool data/lessons.json`）
-- [ ] 本機 `python -m http.server` 開首頁，卡片出現、點進去上一篇/下一篇正常
+- [ ] `lessons.json` 是合法 JSON（`python -m json.tool data/lessons.json`；沒有 Python 就用 `node -e "JSON.parse(require('fs').readFileSync('data/lessons.json','utf8'))"`）
+- [ ] 開首頁，卡片出現、點進去上一篇/下一篇正常（預覽方式見第 2 節；**環境無法啟動伺服器時不可默默略過**，回報中要明講「此項未驗證，需使用者自行確認」）
 
 ## 13. 規則迭代紀錄（員工手冊會持續改寫）
 
@@ -212,6 +213,8 @@ bestep-notes/
 | 2026-11-13 | 初版：目的、技術限制、目錄、命名、固定結構、元件、SOP、驗收 | 全部 |
 | 2026-11-13 | 對照課堂講義補上「交辦三件事」與「不要猜」規則，並註明刻意不放插圖 | 第 0、6 節 |
 | 2026-11-13 | 實測時驗收腳本把出處超連結誤判為外部資源 → 明確區分「外部資源（禁止）」與「文字超連結（限資料來源／頁尾）」 | 第 2 節 |
+| 2026-11-13 | 新對話實測（新增 04 長文閱讀）：AI 把頁首寫成「約 8 分鐘」，與 `lessons.json` 的 15 不一致；回頭檢查發現 01、02 也不一致 → 規定頁首「建議時間」＝`minutes`，並加進驗收清單 | 第 7、12 節 |
+| 2026-11-13 | 新對話實測：環境沒有 Python，驗收的 JSON 檢查與預覽指令跑不動，AI 自行改用 node 驗證，但瀏覽器檢查被略過 → 補上 Node／npx 替代方案，並要求無法驗證的項目必須明講 | 第 2、12 節 |
 | 2026-11-13 | 長文閱讀單元沒有具體規格，AI 容易照短文寫成太短 → 補上字數、題數與題型組成，並指定參考範例 | 第 8 節 |
 
 ## 14. 已知限制

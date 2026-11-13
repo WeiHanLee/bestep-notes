@@ -45,6 +45,16 @@
       "minutes": 15,
       "summary": "聽一句話選最佳回應：抓疑問詞、避開同音字陷阱。可直接按鈕朗讀。",
       "updated": "2026-11-13"
+    },
+    {
+      "id": "04-reading-long",
+      "file": "lessons/04-reading-long.html",
+      "title": "閱讀第三部分：長文閱讀",
+      "skill": "reading",
+      "part": "閱讀 Part 3",
+      "minutes": 15,
+      "summary": "先掃標題與首尾句再回頭找答案，練習主旨、細節、詞義、推論與複選。",
+      "updated": "2026-11-13"
     }
   ]
 }
