@@ -1,0 +1,147 @@
+/* BESTEP 備考講義站 — 全站唯一樣式。修改變數前請見 AGENTS.md 第 6 節 */
+:root {
+  --bg: #ffffff;
+  --surface: #f8fafc;
+  --border: #e5e7eb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-soft: #eff6ff;
+  --ok: #16a34a;
+  --ok-soft: #f0fdf4;
+  --bad: #dc2626;
+  --bad-soft: #fef2f2;
+  --tag-overview: #4b5563;
+  --tag-reading: #0f766e;
+  --tag-listening: #c2410c;
+  --tag-vocab: #7c3aed;
+  --tag-review: #1d4ed8;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --max: 760px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.75;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { line-height: 1.35; }
+h1 { font-size: 1.75rem; margin: 0.25rem 0 0.5rem; }
+h2 { font-size: 1.2rem; margin: 2.25rem 0 0.75rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--border); }
+h3 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; }
+code { background: var(--surface); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* ---------- 站台頁首／頁尾 ---------- */
+.site-bar { border-bottom: 1px solid var(--border); }
+.site-bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.brand { font-weight: 700; color: var(--text); }
+.brand span { color: var(--accent); }
+.site-bar nav a { margin-left: 1rem; color: var(--muted); font-size: 0.9rem; }
+.site-foot { border-top: 1px solid var(--border); margin-top: 4rem; padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.85rem; }
+
+/* ---------- 首頁 ---------- */
+.hero { padding: 3rem 0 1.5rem; }
+.hero p.lead { color: var(--muted); margin: 0; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 1.75rem 0 0.5rem; }
+.stat { border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; }
+.stat .num { font-size: 1.5rem; font-weight: 700; }
+.stat .label { color: var(--muted); font-size: 0.82rem; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 2rem 0 1rem; }
+.chip { border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 999px; padding: 0.3rem 0.9rem; font: inherit; font-size: 0.88rem; cursor: pointer; }
+.chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.cards { display: grid; gap: 12px; }
+.card { display: block; border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.15rem; color: var(--text); box-shadow: var(--shadow); transition: border-color 0.15s; }
+.card:hover { border-color: var(--accent); text-decoration: none; }
+.card .row { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--muted); }
+.card h3 { margin: 0.35rem 0 0.2rem; }
+.card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+.card .check { margin-left: auto; color: var(--ok); font-weight: 700; }
+.empty { color: var(--muted); }
+
+/* ---------- 標籤 ---------- */
+.tag { display: inline-block; font-size: 0.75rem; font-weight: 600; color: #fff; border-radius: 4px; padding: 0.05rem 0.5rem; background: var(--tag-overview); }
+.tag.reading { background: var(--tag-reading); }
+.tag.listening { background: var(--tag-listening); }
+.tag.vocab { background: var(--tag-vocab); }
+.tag.review { background: var(--tag-review); }
+
+/* ---------- 單元頁 ---------- */
+.lesson-head { padding: 2.25rem 0 0.5rem; }
+.crumb { font-size: 0.85rem; color: var(--muted); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: 0.88rem; margin-top: 0.5rem; }
+.meta b { color: var(--text); font-weight: 600; }
+
+.key-points { background: var(--accent-soft); border-radius: var(--radius); padding: 0.25rem 1.25rem 0.75rem; margin-top: 1.5rem; }
+.key-points h2 { border: 0; margin-top: 1rem; }
+.key-points ul { margin: 0; padding-left: 1.2rem; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 0.75rem 0; }
+.table th, .table td { border: 1px solid var(--border); padding: 0.5rem 0.7rem; text-align: left; vertical-align: top; }
+.table th { background: var(--surface); font-weight: 600; }
+.table tr.highlight td { background: var(--accent-soft); font-weight: 600; }
+
+.steps { counter-reset: step; list-style: none; padding: 0; }
+.steps li { counter-increment: step; position: relative; padding: 0 0 0.9rem 2.6rem; }
+.steps li::before { content: counter(step); position: absolute; left: 0; top: 0.1rem; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+.passage { background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; padding: 0.9rem 1.15rem; margin: 1rem 0; font-size: 0.95rem; }
+.passage h4 { margin: 0 0 0.4rem; }
+.passage p { margin: 0.4rem 0; }
+
+.quiz { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.15rem; margin: 1rem 0; }
+.q-stem { margin: 0 0 0.75rem; }
+.q-no { display: inline-block; font-weight: 700; color: var(--accent); margin-right: 0.4rem; }
+.options { display: grid; gap: 8px; }
+.opt { text-align: left; font: inherit; font-size: 0.95rem; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 0.55rem 0.85rem; cursor: pointer; }
+.opt:hover:not(:disabled) { border-color: var(--accent); }
+.opt.selected { border-color: var(--accent); background: var(--accent-soft); }
+.opt.correct { border-color: var(--ok); background: var(--ok-soft); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.opt:disabled { cursor: default; }
+.check-btn, .reset-btn, .speak, .done-toggle { font: inherit; font-size: 0.88rem; border-radius: 8px; padding: 0.4rem 0.9rem; cursor: pointer; }
+.check-btn { margin-top: 0.75rem; background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+.speak { background: var(--bg); color: var(--accent); border: 1px solid var(--accent); margin-left: 0.25rem; }
+.speak:hover { background: var(--accent-soft); }
+.explain { display: none; margin-top: 0.85rem; padding: 0.7rem 0.9rem; border-radius: 8px; background: var(--surface); font-size: 0.92rem; }
+.quiz.answered .explain { display: block; }
+.verdict { font-weight: 700; margin-right: 0.35rem; }
+.verdict.ok { color: var(--ok); }
+.verdict.bad { color: var(--bad); }
+.score { color: var(--muted); font-size: 0.9rem; }
+.reset-btn { background: var(--bg); color: var(--muted); border: 1px solid var(--border); margin-left: 0.5rem; }
+
+.traps { padding-left: 1.2rem; }
+.traps li { margin-bottom: 0.35rem; }
+.traps li::marker { color: var(--bad); }
+
+.task { border: 1px dashed var(--accent); border-radius: var(--radius); padding: 0.25rem 1.25rem 0.9rem; margin-top: 2rem; }
+.task h2 { border: 0; margin-top: 1rem; }
+
+.sources { font-size: 0.85rem; color: var(--muted); }
+.sources h2 { font-size: 1rem; }
+
+.pager-wrap { margin-top: 2.5rem; border-top: 1px solid var(--border); padding-top: 1.25rem; }
+.done-toggle { background: var(--bg); color: var(--text); border: 1px solid var(--border); }
+.done-toggle.on { background: var(--ok-soft); border-color: var(--ok); color: var(--ok); font-weight: 600; }
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem; }
+.pager a { border: 1px solid var(--border); border-radius: var(--radius); padding: 0.7rem 0.9rem; font-size: 0.9rem; }
+.pager a small { display: block; color: var(--muted); }
+.pager .next { text-align: right; grid-column: 2; }
+
+@media (max-width: 560px) {
+  h1 { font-size: 1.45rem; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stats .stat:last-child { grid-column: span 2; }
+  .table { font-size: 0.85rem; }
+}

@@ -1,0 +1,50 @@
+{
+  "site": {
+    "title": "BESTEP 備考講義站",
+    "examDate": "2026-11-21",
+    "target": "B1+（85 分）",
+    "repo": "https://github.com/WeiHanLee/bestep-notes"
+  },
+  "lessons": [
+    {
+      "id": "00-overview",
+      "file": "lessons/00-overview.html",
+      "title": "測驗總覽：題型、時間與 B1+ 門檻",
+      "skill": "overview",
+      "part": "聽力＋閱讀",
+      "minutes": 10,
+      "summary": "先搞懂兩科各考什麼、幾題、幾分算 B1+，再決定時間怎麼分配。",
+      "updated": "2026-11-13"
+    },
+    {
+      "id": "01-reading-vocab",
+      "file": "lessons/01-reading-vocab.html",
+      "title": "閱讀第一部分：詞彙題",
+      "skill": "reading",
+      "part": "閱讀 Part 1",
+      "minutes": 15,
+      "summary": "5 題填空，用「詞性 → 搭配詞 → 語意」三步驟快速拿分。",
+      "updated": "2026-11-13"
+    },
+    {
+      "id": "02-reading-short",
+      "file": "lessons/02-reading-short.html",
+      "title": "閱讀第二部分：短文與圖表題組",
+      "skill": "reading",
+      "part": "閱讀 Part 2",
+      "minutes": 15,
+      "summary": "先看題目再讀文章，練習主旨、細節、推論三種常見問法。",
+      "updated": "2026-11-13"
+    },
+    {
+      "id": "03-listening-qa",
+      "file": "lessons/03-listening-qa.html",
+      "title": "聽力第一部分：問答題",
+      "skill": "listening",
+      "part": "聽力 Part 1",
+      "minutes": 15,
+      "summary": "聽一句話選最佳回應：抓疑問詞、避開同音字陷阱。可直接按鈕朗讀。",
+      "updated": "2026-11-13"
+    }
+  ]
+}

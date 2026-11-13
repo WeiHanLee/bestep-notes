@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BESTEP 備考講義站</title>
+  <meta name="description" content="培力英檢 BESTEP 聽力與閱讀備考講義，每天 15 分鐘一個單元，目標 B1+。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-bar">
+    <div class="wrap">
+      <a class="brand" href="index.html">BESTEP <span>備考講義站</span></a>
+      <nav>
+        <a href="lessons/00-overview.html">測驗總覽</a>
+        <a id="repo-link" href="#" hidden>GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>培力英檢 聽力＋閱讀 備考講義</h1>
+      <p class="lead">一天一個單元，15 分鐘讀完、做完練習。每個單元都用同一套結構：重點 → 題型 → 解題步驟 → 例題 → 陷阱 → 今日任務。</p>
+      <div class="stats">
+        <div class="stat"><div class="num" id="stat-days">–</div><div class="label">距離考試（天）</div></div>
+        <div class="stat"><div class="num" id="stat-target">–</div><div class="label">聽力、閱讀目標</div></div>
+        <div class="stat"><div class="num" id="stat-done">–</div><div class="label">已完成單元</div></div>
+      </div>
+    </section>
+
+    <div class="filters" role="tablist">
+      <button class="chip active" data-filter="all">全部</button>
+      <button class="chip" data-filter="overview">總覽</button>
+      <button class="chip" data-filter="reading">閱讀</button>
+      <button class="chip" data-filter="listening">聽力</button>
+      <button class="chip" data-filter="vocab">單字</button>
+      <button class="chip" data-filter="review">複習</button>
+    </div>
+    <div class="cards" id="cards"></div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      本站內容依照 <code>AGENTS.md</code> 的規則產生；練習題皆為原創，官方資訊以 <a href="https://bestep.tw/">培力英檢官網</a> 為準。
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
