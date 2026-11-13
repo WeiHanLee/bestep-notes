@@ -14,6 +14,15 @@
 3. `data/lessons.json` 是唯一的目錄，首頁卡片與上一篇／下一篇都由它自動產生。
 4. `raw/` 放原始素材與官方事實，AI 整理內容時從這裡取材。
 
+## 對應課堂講義（09 換你當老闆）
+
+| 講義概念 | 在本專案的對應 |
+|---|---|
+| AI Agent = AI Model + Harness | 模型負責想；`AGENTS.md`、範本、驗收清單就是這個專案的 Harness |
+| 寫一本員工手冊 | `AGENTS.md`（`CLAUDE.md` 只指向它），第 0 節就是「交辦三件事：成品／限制／完成標準」 |
+| 每次開對話先讀員工手冊、可持續改寫 | 第 13 節「規則迭代紀錄」記錄每次發現的問題與補進的規則 |
+| 想法 → 成品（ideas → presentation；LLM Wiki 的 raw → wiki） | `raw/` 素材 → `lessons/` 單元，`data/lessons.json` 當目錄（index） |
+
 ## 新增一個單元
 
 開一個新的 AI 對話，輸入：
